@@ -35,8 +35,6 @@ class QPM_Plugin {
 	 * Constructor.
 	 */
 	private function __construct() {
-		add_action( 'init', array( $this, 'load_textdomain' ) );
-
 		if ( ! qpm_is_woocommerce_active() ) {
 			add_action( 'admin_notices', array( $this, 'woocommerce_missing_notice' ) );
 			return;
@@ -49,17 +47,6 @@ class QPM_Plugin {
 		 * Fires after Quick Product Manager is fully loaded.
 		 */
 		do_action( 'qpm_loaded' );
-	}
-
-	/**
-	 * Load translations.
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain(
-			'quick-product-manager',
-			false,
-			dirname( plugin_basename( QPM_PLUGIN_FILE ) ) . '/languages'
-		);
 	}
 
 	/**

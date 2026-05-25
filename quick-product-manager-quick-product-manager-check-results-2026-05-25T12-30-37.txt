@@ -1,0 +1,128 @@
+PLUGIN CHECK RESULTS
+====================
+
+Generated: 5/25/2026, 4:00:37 PM
+
+Plugin: Quick Product Manager
+Plugin Basename: quick-product-manager/quick-product-manager.php
+
+
+FILE: C:\wamp64\www\wpagentify\wordpress\wp-content\plugins\quick-product-manager\includes\class-qpm-admin-menu.php
+==================================================
+
+Type: ERROR
+File: C:\wamp64\www\wpagentify\wordpress\wp-content\plugins\quick-product-manager\includes\class-qpm-admin-menu.php
+Line: 111
+Column: 43
+Code: WordPress.WP.I18n.MissingTranslatorsComment
+Message: A function call to __() with texts containing placeholders was found, but was not accompanied by a "translators:" comment on the line above to clarify the meaning of the placeholders. Learn more (opens in a new tab)
+Documentation: https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions
+
+--------------------------------------------------
+
+Type: ERROR
+File: C:\wamp64\www\wpagentify\wordpress\wp-content\plugins\quick-product-manager\includes\class-qpm-admin-menu.php
+Line: 115
+Column: 43
+Code: WordPress.WP.I18n.MissingTranslatorsComment
+Message: A function call to __() with texts containing placeholders was found, but was not accompanied by a "translators:" comment on the line above to clarify the meaning of the placeholders. Learn more (opens in a new tab)
+Documentation: https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions
+
+--------------------------------------------------
+
+Type: ERROR
+File: C:\wamp64\www\wpagentify\wordpress\wp-content\plugins\quick-product-manager\includes\class-qpm-admin-menu.php
+Line: 116
+Column: 43
+Code: WordPress.WP.I18n.MissingTranslatorsComment
+Message: A function call to __() with texts containing placeholders was found, but was not accompanied by a "translators:" comment on the line above to clarify the meaning of the placeholders. Learn more (opens in a new tab)
+Documentation: https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions
+
+--------------------------------------------------
+
+Type: ERROR
+File: C:\wamp64\www\wpagentify\wordpress\wp-content\plugins\quick-product-manager\includes\class-qpm-admin-menu.php
+Line: 153
+Column: 43
+Code: WordPress.WP.I18n.MissingTranslatorsComment
+Message: A function call to __() with texts containing placeholders was found, but was not accompanied by a "translators:" comment on the line above to clarify the meaning of the placeholders. Learn more (opens in a new tab)
+Documentation: https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#descriptions
+
+--------------------------------------------------
+
+
+FILE: C:\wamp64\www\wpagentify\wordpress\wp-content\plugins\quick-product-manager\includes\class-qpm-plugin.php
+==================================================
+
+Type: ERROR
+File: C:\wamp64\www\wpagentify\wordpress\wp-content\plugins\quick-product-manager\includes\class-qpm-plugin.php
+Line: 58
+Column: 3
+Code: PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound
+Message: load_plugin_textdomain() has been discouraged since WordPress version 4.6. When your plugin is hosted on WordPress.org, you no longer need to manually include this function call for translations under your plugin slug. WordPress will automatically load the translations for you as needed. Learn more (opens in a new tab)
+Documentation: https://make.wordpress.org/core/2016/07/06/i18n-improvements-in-4-6/
+
+--------------------------------------------------
+
+
+FILE: C:\wamp64\www\wpagentify\wordpress\wp-content\plugins\quick-product-manager\includes\class-qpm-product-query.php
+==================================================
+
+Type: WARNING
+File: C:\wamp64\www\wpagentify\wordpress\wp-content\plugins\quick-product-manager\includes\class-qpm-product-query.php
+Line: 144
+Column: 23
+Code: WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+Message: Detected usage of tax_query, possible slow query.
+
+--------------------------------------------------
+
+
+FILE: README.md
+==================================================
+
+Type: ERROR
+File: README.md
+Line: 0
+Column: 0
+Code: missing_readme_header_tested
+Message: The "Tested up to" header is missing in the readme file. Learn more (opens in a new tab)
+Documentation: https://developer.wordpress.org/plugins/wordpress-org/how-your-readme-txt-works/#readme-header-information
+Edit Link: http://localhost/wpagentify/wordpress/wp-admin/plugin-editor.php?plugin=quick-product-manager%2Fquick-product-manager.php&file=quick-product-manager%2FREADME.md
+
+--------------------------------------------------
+
+Type: ERROR
+File: README.md
+Line: 0
+Column: 0
+Code: no_license
+Message: Missing "License".Please update your readme with a valid GPLv2 (or later) compatible license. Learn more (opens in a new tab)
+Documentation: https://developer.wordpress.org/plugins/wordpress-org/common-issues/#no-gpl-compatible-license-declared
+Edit Link: http://localhost/wpagentify/wordpress/wp-admin/plugin-editor.php?plugin=quick-product-manager%2Fquick-product-manager.php&file=quick-product-manager%2FREADME.md
+
+--------------------------------------------------
+
+Type: ERROR
+File: README.md
+Line: 0
+Column: 0
+Code: no_stable_tag
+Message: Invalid or missing Stable Tag.Your Stable Tag is meant to be the stable version of your plugin and it needs to be exactly the same with the Version in your main plugin file's header. Any mismatch can prevent users from downloading the correct plugin files from WordPress.org. Learn more (opens in a new tab)
+Documentation: https://developer.wordpress.org/plugins/wordpress-org/common-issues/#incorrect-stable-tag
+Edit Link: http://localhost/wpagentify/wordpress/wp-admin/plugin-editor.php?plugin=quick-product-manager%2Fquick-product-manager.php&file=quick-product-manager%2FREADME.md
+
+--------------------------------------------------
+
+Type: WARNING
+File: README.md
+Line: 0
+Column: 0
+Code: readme_parser_warnings_trimmed_short_description
+Message: The "Short Description" section is too long and was truncated. A maximum of 150 characters is supported.
+Edit Link: http://localhost/wpagentify/wordpress/wp-admin/plugin-editor.php?plugin=quick-product-manager%2Fquick-product-manager.php&file=quick-product-manager%2FREADME.md
+
+--------------------------------------------------
+
+
+Checks complete. Errors were found.
