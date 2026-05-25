@@ -36,6 +36,17 @@ class QPM_REST_Controller {
 
 		register_rest_route(
 			QPM_REST_NAMESPACE,
+			'/products/selectable',
+			array(
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => array( $this, 'get_selectable' ),
+				'permission_callback' => array( $this, 'check_permission' ),
+				'args'                => $this->get_filter_params(),
+			)
+		);
+
+		register_rest_route(
+			QPM_REST_NAMESPACE,
 			'/products/batch',
 			array(
 				'methods'             => WP_REST_Server::CREATABLE,
@@ -68,6 +79,19 @@ class QPM_REST_Controller {
 	}
 
 	/**
+	 * GET /products/selectable — all editable rows for current filters.
+	 *
+	 * @param WP_REST_Request $request Request.
+	 * @return WP_REST_Response
+	 */
+	public function get_selectable( $request ) {
+		$query  = new QPM_Product_Query();
+		$result = $query->get_selectable_rows( $request->get_params() );
+
+		return rest_ensure_response( $result );
+	}
+
+	/**
 	 * POST /products/batch
 	 *
 	 * @param WP_REST_Request $request Request.
@@ -88,18 +112,8 @@ class QPM_REST_Controller {
 	 *
 	 * @return array
 	 */
-	private function get_collection_params() {
+	private function get_filter_params() {
 		return array(
-			'page'                => array(
-				'type'              => 'integer',
-				'default'           => 1,
-				'sanitize_callback' => 'absint',
-			),
-			'per_page'            => array(
-				'type'              => 'integer',
-				'default'           => QPM_Product_Query::DEFAULT_PER_PAGE,
-				'sanitize_callback' => 'absint',
-			),
 			'search'              => array(
 				'type'              => 'string',
 				'sanitize_callback' => 'sanitize_text_field',
@@ -112,18 +126,45 @@ class QPM_REST_Controller {
 				'type'              => 'integer',
 				'sanitize_callback' => 'absint',
 			),
-			'tag'                 => array(
-				'type'              => 'integer',
-				'sanitize_callback' => 'absint',
-			),
 			'stock_status'        => array(
 				'type'              => 'string',
 				'sanitize_callback' => 'sanitize_text_field',
 			),
-			'catalog_visibility'  => array(
+			'brand'               => array(
+				'type'              => 'integer',
+				'sanitize_callback' => 'absint',
+			),
+			'brand_taxonomy'      => array(
 				'type'              => 'string',
 				'sanitize_callback' => 'sanitize_text_field',
 			),
+			'post_status'         => array(
+				'type'              => 'string',
+				'sanitize_callback' => 'sanitize_text_field',
+			),
+		);
+	}
+
+	/**
+	 * Collection query params.
+	 *
+	 * @return array
+	 */
+	private function get_collection_params() {
+		return array_merge(
+			$this->get_filter_params(),
+			array(
+			'page'                => array(
+				'type'              => 'integer',
+				'default'           => 1,
+				'sanitize_callback' => 'absint',
+			),
+			'per_page'            => array(
+				'type'              => 'integer',
+				'default'           => QPM_Product_Query::DEFAULT_PER_PAGE,
+				'sanitize_callback' => 'absint',
+			),
+			)
 		);
 	}
 }

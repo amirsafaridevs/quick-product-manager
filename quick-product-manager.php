@@ -1,22 +1,26 @@
 <?php
 /**
  * Plugin Name:       Quick Product Manager
- * Plugin URI:        https://github.com/amirsafaridevs/quick-product-manager
  * Description:       Manage WooCommerce product price and stock from a single admin table.
- * Version:           1.0.0
+ * Version:           1.1.7
  * Requires at least: 5.8
+ * Tested up to:      7.0
  * Requires PHP:      7.4
- * Author:            Quick Product Manager
+ * Author:            Amir Safari
+ * Author URI:        https://amirsafaridev.github.io/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       quick-product-manager
+ * Requires Plugins:  woocommerce
+ * WC requires at least: 5.0
+ * WC tested up to:    10.7.0
  *
  * @package QuickProductManager
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'QPM_VERSION', '1.0.0' );
+define( 'QPM_VERSION', '1.1.7' );
 define( 'QPM_PLUGIN_FILE', __FILE__ );
 define( 'QPM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'QPM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
