@@ -2,15 +2,15 @@
 /**
  * REST API controller.
  *
- * @package QuickProductManager
+ * @package ASDevsQuickProductManager
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class QPM_REST_Controller
+ * Class ASDevs_QPM_REST_Controller
  */
-class QPM_REST_Controller {
+class ASDevs_QPM_REST_Controller {
 
 	/**
 	 * Constructor.
@@ -24,7 +24,7 @@ class QPM_REST_Controller {
 	 */
 	public function register_routes() {
 		register_rest_route(
-			QPM_REST_NAMESPACE,
+			ASDEVS_QPM_REST_NAMESPACE,
 			'/products',
 			array(
 				'methods'             => WP_REST_Server::READABLE,
@@ -35,7 +35,7 @@ class QPM_REST_Controller {
 		);
 
 		register_rest_route(
-			QPM_REST_NAMESPACE,
+			ASDEVS_QPM_REST_NAMESPACE,
 			'/products/selectable',
 			array(
 				'methods'             => WP_REST_Server::READABLE,
@@ -46,7 +46,7 @@ class QPM_REST_Controller {
 		);
 
 		register_rest_route(
-			QPM_REST_NAMESPACE,
+			ASDEVS_QPM_REST_NAMESPACE,
 			'/products/batch',
 			array(
 				'methods'             => WP_REST_Server::CREATABLE,
@@ -72,7 +72,7 @@ class QPM_REST_Controller {
 	 * @return WP_REST_Response
 	 */
 	public function get_products( $request ) {
-		$query  = new QPM_Product_Query();
+		$query  = new ASDevs_QPM_Product_Query();
 		$result = $query->get_products( $request->get_params() );
 
 		return rest_ensure_response( $result );
@@ -85,7 +85,7 @@ class QPM_REST_Controller {
 	 * @return WP_REST_Response
 	 */
 	public function get_selectable( $request ) {
-		$query  = new QPM_Product_Query();
+		$query  = new ASDevs_QPM_Product_Query();
 		$result = $query->get_selectable_rows( $request->get_params() );
 
 		return rest_ensure_response( $result );
@@ -101,7 +101,7 @@ class QPM_REST_Controller {
 		$body    = $request->get_json_params();
 		$changes = isset( $body['changes'] ) ? $body['changes'] : array();
 
-		$updater = new QPM_Product_Updater();
+		$updater = new ASDevs_QPM_Product_Updater();
 		$result  = $updater->apply_batch( $changes );
 
 		return rest_ensure_response( $result );
@@ -161,7 +161,7 @@ class QPM_REST_Controller {
 			),
 			'per_page'            => array(
 				'type'              => 'integer',
-				'default'           => QPM_Product_Query::DEFAULT_PER_PAGE,
+				'default'           => ASDevs_QPM_Product_Query::DEFAULT_PER_PAGE,
 				'sanitize_callback' => 'absint',
 			),
 			)

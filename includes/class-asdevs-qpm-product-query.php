@@ -2,15 +2,15 @@
 /**
  * Product list query for REST.
  *
- * @package QuickProductManager
+ * @package ASDevsQuickProductManager
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class QPM_Product_Query
+ * Class ASDevs_QPM_Product_Query
  */
-class QPM_Product_Query {
+class ASDevs_QPM_Product_Query {
 
 	/**
 	 * Default items per page (products, not rows).
@@ -43,7 +43,7 @@ class QPM_Product_Query {
 				}
 				$rows = $this->product_to_rows( $product );
 				foreach ( $rows as $row ) {
-					$items[] = apply_filters( 'qpm_product_row', $row, $product );
+					$items[] = apply_filters( 'asdevs_qpm_product_row', $row, $product );
 				}
 			}
 		}
@@ -79,7 +79,7 @@ class QPM_Product_Query {
 				}
 				$rows = $this->product_to_rows( $product );
 				foreach ( $rows as $row ) {
-					$row = apply_filters( 'qpm_product_row', $row, $product );
+					$row = apply_filters( 'asdevs_qpm_product_row', $row, $product );
 					if ( empty( $row['readonly'] ) ) {
 						$items[] = $row;
 					}

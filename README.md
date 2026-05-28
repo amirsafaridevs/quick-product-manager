@@ -1,4 +1,4 @@
-# Quick Product Manager
+# ASDevs Quick Product Manager
 
 A WordPress plugin for WooCommerce stores that puts your entire product catalog in one admin screen, so you can update prices and stock without opening each product edit page.
 
@@ -11,7 +11,7 @@ A WordPress plugin for WooCommerce stores that puts your entire product catalog 
 - **Infinite scroll** — Server-side pagination (30 products per page) with scroll-to-load
 - **AJAX save** — Top and bottom **Save changes** buttons; only modified rows are sent to the server
 - **Visual feedback** — Edited rows highlight with a light green background until saved
-- **Translations** — Text domain `quick-product-manager` (English default); `.pot` in `languages/`
+- **Translations** — Text domain `asdevs-quick-product-manager` (English default); `.pot` in `languages/`
 
 ## Requirements
 
@@ -22,23 +22,23 @@ A WordPress plugin for WooCommerce stores that puts your entire product catalog 
 
 ## Installation
 
-1. Clone into `wp-content/plugins/quick-product-manager/`:
+1. Clone into `wp-content/plugins/asdevs-quick-product-manager/`:
 
    ```bash
-   git clone https://github.com/amirsafaridevs/quick-product-manager.git
+   git clone https://github.com/amirsafaridevs/asdevs-quick-product-manager.git
    ```
 
-2. Activate **Quick Product Manager** under **Plugins**.
+2. Activate **ASDevs Quick Product Manager** under **Plugins**.
 3. Open **WooCommerce → Quick Products**.
 
 ## REST API
 
-Namespace: `qpm/v1` (requires logged-in user with `manage_woocommerce` and valid `X-WP-Nonce`).
+Namespace: `asdevs-qpm/v1` (requires logged-in user with `manage_woocommerce` and valid `X-WP-Nonce`).
 
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/wp-json/qpm/v1/products` | List products (query: `page`, `per_page`, `search`, `type`, `category`, `tag`, `stock_status`, `catalog_visibility`) |
-| POST | `/wp-json/qpm/v1/products/batch` | Batch update `{ "changes": [ { "id": 123, "regular_price": "10" } ] }` |
+| GET | `/wp-json/asdevs-qpm/v1/products` | List products (query: `page`, `per_page`, `search`, `type`, `category`, `tag`, `stock_status`, `catalog_visibility`) |
+| POST | `/wp-json/asdevs-qpm/v1/products/batch` | Batch update `{ "changes": [ { "id": 123, "regular_price": "10" } ] }` |
 
 ## Development
 
@@ -49,10 +49,10 @@ Namespace: `qpm/v1` (requires logged-in user with `manage_woocommerce` and valid
 
 ### Translators
 
-Copy `languages/quick-product-manager.pot` to `quick-product-manager-{locale}.po` / `.mo`, or run:
+Copy `languages/asdevs-quick-product-manager.pot` to `asdevs-quick-product-manager-{locale}.po` / `.mo`, or run:
 
 ```bash
-wp i18n make-pot . languages/quick-product-manager.pot --domain=quick-product-manager
+wp i18n make-pot . languages/asdevs-quick-product-manager.pot --domain=asdevs-quick-product-manager
 ```
 
 ### Manual testing
@@ -70,4 +70,4 @@ GPL v2 or later.
 
 ## Repository
 
-https://github.com/amirsafaridevs/quick-product-manager
+https://github.com/amirsafaridevs/asdevs-quick-product-manager
