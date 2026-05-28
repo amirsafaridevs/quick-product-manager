@@ -2,15 +2,15 @@
 /**
  * Batch product updates.
  *
- * @package QuickProductManager
+ * @package ASDevsQuickProductManager
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class QPM_Product_Updater
+ * Class ASDevs_QPM_Product_Updater
  */
-class QPM_Product_Updater {
+class ASDevs_QPM_Product_Updater {
 
 	/**
 	 * Apply batch changes.
@@ -28,7 +28,7 @@ class QPM_Product_Updater {
 				'failed'  => array(
 					array(
 						'id'      => 0,
-						'message' => __( 'Invalid request body.', 'quick-product-manager' ),
+						'message' => __( 'Invalid request body.', 'asdevs-quick-product-manager' ),
 					),
 				),
 			);
@@ -45,7 +45,7 @@ class QPM_Product_Updater {
 			if ( ! $product ) {
 				$failed[] = array(
 					'id'      => $id,
-					'message' => __( 'Product not found.', 'quick-product-manager' ),
+					'message' => __( 'Product not found.', 'asdevs-quick-product-manager' ),
 				);
 				continue;
 			}
@@ -53,19 +53,19 @@ class QPM_Product_Updater {
 			if ( ! $this->is_editable( $product ) ) {
 				$failed[] = array(
 					'id'      => $id,
-					'message' => __( 'This product row cannot be edited.', 'quick-product-manager' ),
+					'message' => __( 'This product row cannot be edited.', 'asdevs-quick-product-manager' ),
 				);
 				continue;
 			}
 
 			try {
 				/**
-				 * Fires before a product is updated via Quick Product Manager.
+				 * Fires before a product is updated via ASDevs Quick Product Manager.
 				 *
 				 * @param WC_Product $product Product object.
 				 * @param array      $change  Change payload.
 				 */
-				do_action( 'qpm_before_product_save', $product, $change );
+				do_action( 'asdevs_qpm_before_product_save', $product, $change );
 
 				$this->apply_change( $product, $change );
 				$product->save();

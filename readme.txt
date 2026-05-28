@@ -1,4 +1,4 @@
-=== Quick Product Manager ===
+=== ASDevs Quick Product Manager ===
 Contributors: amirsafaridevs
 Tags: woocommerce, products, stock, price, bulk edit
 Requires at least: 5.8
@@ -12,7 +12,7 @@ Manage WooCommerce product prices and stock from a single admin table.
 
 == Description ==
 
-Quick Product Manager adds a spreadsheet-style screen under **WooCommerce → Quick Products** so you can update prices, stock, SKUs, and sale schedules without opening each product edit page.
+ASDevs Quick Product Manager adds a spreadsheet-style screen under **WooCommerce → Quick Products** so you can update prices, stock, SKUs, and sale schedules without opening each product edit page.
 
 = Features =
 
@@ -23,7 +23,7 @@ Quick Product Manager adds a spreadsheet-style screen under **WooCommerce → Qu
 * AJAX save: only modified rows are sent to the server
 * Bulk edit for selected products (prices, stock, sale dates)
 * Visual feedback for unsaved changes
-* Translation-ready (`quick-product-manager` text domain)
+* Translation-ready (`asdevs-quick-product-manager` text domain)
 
 = Requirements =
 
@@ -34,8 +34,8 @@ Quick Product Manager adds a spreadsheet-style screen under **WooCommerce → Qu
 
 == Installation ==
 
-1. Upload the `quick-product-manager` folder to `/wp-content/plugins/`, or install from the WordPress Plugins screen.
-2. Activate **Quick Product Manager** through the **Plugins** menu.
+1. Upload the `asdevs-quick-product-manager` folder to `/wp-content/plugins/`, or install from the WordPress Plugins screen.
+2. Activate **ASDevs Quick Product Manager** through the **Plugins** menu.
 3. Ensure WooCommerce is installed and active.
 4. Open **WooCommerce → Quick Products**.
 

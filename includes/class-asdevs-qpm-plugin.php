@@ -2,27 +2,27 @@
 /**
  * Main plugin bootstrap.
  *
- * @package QuickProductManager
+ * @package ASDevsQuickProductManager
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class QPM_Plugin
+ * Class ASDevs_QPM_Plugin
  */
-class QPM_Plugin {
+class ASDevs_QPM_Plugin {
 
 	/**
 	 * Singleton instance.
 	 *
-	 * @var QPM_Plugin|null
+	 * @var ASDevs_QPM_Plugin|null
 	 */
 	private static $instance = null;
 
 	/**
 	 * Get instance.
 	 *
-	 * @return QPM_Plugin
+	 * @return ASDevs_QPM_Plugin
 	 */
 	public static function instance() {
 		if ( null === self::$instance ) {
@@ -35,18 +35,18 @@ class QPM_Plugin {
 	 * Constructor.
 	 */
 	private function __construct() {
-		if ( ! qpm_is_woocommerce_active() ) {
+		if ( ! asdevs_qpm_is_woocommerce_active() ) {
 			add_action( 'admin_notices', array( $this, 'woocommerce_missing_notice' ) );
 			return;
 		}
 
-		new QPM_Admin_Menu();
-		new QPM_REST_Controller();
+		new ASDevs_QPM_Admin_Menu();
+		new ASDevs_QPM_REST_Controller();
 
 		/**
-		 * Fires after Quick Product Manager is fully loaded.
+		 * Fires after ASDevs Quick Product Manager is fully loaded.
 		 */
-		do_action( 'qpm_loaded' );
+		do_action( 'asdevs_qpm_loaded' );
 	}
 
 	/**
@@ -58,7 +58,7 @@ class QPM_Plugin {
 		}
 		?>
 		<div class="notice notice-error">
-			<p><?php esc_html_e( 'Quick Product Manager requires WooCommerce to be installed and active.', 'quick-product-manager' ); ?></p>
+			<p><?php esc_html_e( 'ASDevs Quick Product Manager requires WooCommerce to be installed and active.', 'asdevs-quick-product-manager' ); ?></p>
 		</div>
 		<?php
 	}
